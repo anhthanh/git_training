@@ -12,5 +12,10 @@
  */
 
 return [
-    // ...
+    'db' => [
+        'driver' => 'Pdo',
+        'dsn' => 'mysql:dbname=tutorial;host=localhost',
+        'username' => 'isling',
+        'password' => 'zend123456',
+    ],
 ];
