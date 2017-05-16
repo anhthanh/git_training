@@ -48,15 +48,16 @@ class AlbumTable
             'title' => $album->title
         ];
 
-        $id = $album->id;
+        $id = (int)$album->id;
 
         if ($id === 0) {
             $this->tableGateway->insert($data);
+            return;
         }
 
         if (!$this->getAlbum($id)) {
             throw new RuntimeException(
-                sprintf('Cannot udate album with identifier %d; does not exist', $id)
+                sprintf('Cannot update album with identifier %d; does not exist', $id)
             );
         }
 
