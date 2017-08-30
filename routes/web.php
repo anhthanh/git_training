@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',['as'=>'getHomePage','uses'=>'PageController@getHomePage']);
+Route::get('contacts',['as'=>'getContactsPage','uses'=>'PageController@getContactsPage']);
+Route::get('products',['as'=>'getProductsPage','uses'=>'PageController@getProductsPage']);
+Route::get('checkout',['as'=>'getCheckOutPage','uses'=>'PageController@getCheckOutPage']);
+Route::get('register',['as'=>'getRegisterPage','uses'=>'PageController@getRegisterPage']);
+Route::get('login',['as'=>'getLogInPage','uses'=>'PageController@getLogInPage']);
